@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Tuah Kopi</title>
+    <!-- Font Inter (UI) & Roboto Mono (Angka) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="admin-page">
+
+    <div class="admin-layout">
+        <!-- Sidebar Modern -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>Tuah Kopi</h2>
+                <span>Admin Panel</span>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-target="dashboard"><i class="fas fa-chart-pie"></i> Dashboard</button>
+                <button class="nav-item" data-target="transaksi"><i class="fas fa-cash-register"></i> Kasir / Transaksi</button>
+                <button class="nav-item" data-target="riwayat"><i class="fas fa-history"></i> Riwayat Transaksi</button>
+                <button class="nav-item" data-target="laporan"><i class="fas fa-chart-line"></i> Laporan Penjualan</button>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="btnLogout" class="btn-outline w-100"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="admin-section active">
+                <h2 class="section-title">Ringkasan Hari Ini</h2>
+                <div class="dashboard-cards">
+                    <!-- Card 1 -->
+                    <div class="dash-card">
+                        <div class="dash-header">
+                            <p class="dash-label">Total Pendapatan</p>
+                            <div class="dash-icon"><i class="fas fa-wallet"></i></div>
+                        </div>
+                        <h3 id="dashPendapatan" class="mono-text">Rp0</h3>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="dash-card">
+                        <div class="dash-header">
+                            <p class="dash-label">Total Transaksi</p>
+                            <div class="dash-icon"><i class="fas fa-receipt"></i></div>
+                        </div>
+                        <h3 id="dashTotalTrx" class="mono-text">0</h3>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="dash-card">
+                        <div class="dash-header">
+                            <p class="dash-label">Menu Terlaris</p>
+                            <div class="dash-icon"><i class="fas fa-fire"></i></div>
+                        </div>
+                        <h3 id="dashTerlaris" class="mono-text">-</h3>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="dash-card">
+                        <div class="dash-header">
+                            <p class="dash-label">Rata-rata Transaksi</p>
+                            <div class="dash-icon"><i class="fas fa-chart-bar"></i></div>
+                        </div>
+                        <h3 id="dashRataRata" class="mono-text">Rp0</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transaksi Section -->
+            <section id="transaksi" class="admin-section">
+                <h2 class="section-title">Kasir Tuah Kopi</h2>
+                <div class="kasir-card card-rounded">
+                    <form id="formKasir">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="pilihMenu">Pilih Menu</label>
+                                <select id="pilihMenu" required>
+                                    <option value="">-- Pilih Kopi --</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Harga Satuan</label>
+                                <input type="text" id="hargaSatuan" class="mono-text" value="Rp0" readonly style="background: #F3F4F6;">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="jumlah">Jumlah (Cup)</label>
+                                <input type="number" id="jumlah" class="mono-text" min="1" value="1" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="metode">Metode Pembayaran</label>
+                                <select id="metode" required>
+                                    <option value="Cash">Cash</option>
+                                    <option value="QRIS">QRIS</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="extraShot">
+                            <label for="extraShot">Tambah Extra Shot Espresso (+Rp4.000 / cup)</label>
+                        </div>
+
+                        <div class="total-box">
+                            <span>Total Pembayaran:</span>
+                            <strong id="totalBayar" class="mono-text">Rp0</strong>
+                        </div>
+
+                        <button type="submit" class="btn-primary w-100"><i class="fas fa-save"></i> Simpan Transaksi</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Riwayat Section -->
+            <section id="riwayat" class="admin-section">
+                <h2 class="section-title">Riwayat Transaksi</h2>
+                <div class="table-container card-rounded">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Menu</th>
+                                <th>Add-on</th>
+                                <th>Harga</th>
+                                <th>Qty</th>
+                                <th>Total</th>
+                                <th>Metode</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelRiwayat" class="mono-text-table">
+                            <!-- Render via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Laporan Section -->
+            <section id="laporan" class="admin-section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                    <h2 class="section-title" style="margin-bottom: 0;">Laporan Penjualan</h2>
+                    <button id="btnExportPdf" class="btn-primary" style="padding: 10px 20px;"><i class="fas fa-file-pdf"></i> Unduh PDF</button>
+                </div>
+                
+                <div id="areaCetakLaporan" style="background: #F9FAFB; padding: 20px; border-radius: 16px;">
+                    <div class="report-summary-grid">
+                        <div class="card-rounded summary-box">
+                            <h4><i class="fas fa-wallet"></i> Metode Pembayaran</h4>
+                            <p>Cash: <strong id="lapCash" class="mono-text">0</strong></p>
+                            <p>QRIS: <strong id="lapQris" class="mono-text">0</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="chart-wrapper card-rounded mt-20">
+                        <canvas id="salesChart"></canvas>
+                    </div>
+
+                    <div class="table-container card-rounded mt-20">
+                        <h3 style="margin-bottom: 15px;">Detail Penjualan Menu</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nama Menu</th>
+                                    <th>Total Cup Terjual</th>
+                                    <th>Total Pendapatan</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabelLaporan" class="mono-text-table">
+                                <!-- Render via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Script HTML2PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

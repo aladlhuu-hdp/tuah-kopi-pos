@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuah Kopi - Premium Robusta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="public-page">
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Tuah Kopi</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#beranda">Beranda</a>
+                <a href="#best-seller">Signature</a>
+                <a href="#menu">Menu</a>
+                <a href="#cabang">Outlet</a>
+            </div>
+            <div class="nav-action">
+                <a href="login.html" class="btn-login-nav"><i class="fas fa-user-lock"></i> Masuk Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="beranda" class="hero-full">
+            
+            <video class="hero-video" autoplay loop muted playsinline>
+                <source src="assets/hero-video.mp4" type="video/mp4">
+                Browser kamu tidak mendukung tag video.
+            </video>
+
+            <div class="hero-overlay"></div>
+            
+            <div class="hero-container-full">
+                <div class="hero-content-full">
+                    <span class="subtitle-full"><i class="fas fa-award"></i> Cita Rasa Autentik</span>
+                    <h2>100% Robusta Asli<br>Racikan Istimewa</h2>
+                    <p>Nikmati kopi yang bikin hari lebih berwarna. Diramu dari biji pilihan berkualitas tinggi untuk menciptakan tegukan sempurna yang bikin nagih.</p>
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn-primary">Lihat Katalog Menu</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>4+</h3>
+                    <p>Outlet Aktif</p>
+                </div>
+                <div class="stat-card">
+                    <h3>10+</h3>
+                    <p>Varian Menu</p>
+                </div>
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p>Robusta Asli</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="best-seller" class="best-seller">
+            <div class="section-header">
+                <h2 class="gold-text">Pilihan Favorit</h2>
+                <p>Racikan andalan yang selalu menjadi alasan untuk kembali.</p>
+            </div>
+            <div class="best-seller-container">
+                <div class="bs-glow"></div>
+                <i class="fas fa-leaf decoration deco-1"></i>
+                <i class="fas fa-coffee decoration deco-2"></i>
+                
+                <div class="bs-image">
+                    <img src="assets/product.png" alt="Kopi Susu Best Seller" class="bs-img" onerror="this.onerror=null; this.outerHTML='<div class=\\'img-placeholder bs-placeholder\\'><i class=\\'fas fa-mug-hot fa-3x\\'></i></div>'">
+                </div>
+                <div class="bs-content">
+                    <div class="bs-badge"><i class="fas fa-star"></i> Signature Menu</div>
+                    <h2>Kopi Susu Tuah</h2>
+                    <p>Kombinasi sempurna antara espresso robusta pekat, susu segar premium, dan manisnya racikan rahasia kami. Harmoni rasa dalam satu gelas.</p>
+                    <p class="bs-price">Mulai dari Rp10.000</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-section">
+            <div class="section-header">
+                <h2>Katalog Menu Kami</h2>
+                <p>Pilihan racikan istimewa untuk menemani harimu.</p>
+                <span class="addon-info"><i class="fas fa-plus-circle"></i> Add-on: Extra Shot Espresso (+Rp4.000)</span>
+            </div>
+            
+            <div class="menu-slider">
+                <div class="menu-track" id="publicMenuTrack">
+                    <div class="menu-card">
+                        <div class="menu-badge gold-badge">Best Seller</div>
+                        <img src="assets/kopi-susu-single.png" alt="Kopi Susu Single Shot" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Kopi Susu Single Shot</h3>
+                            <p>Rp10.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge gold-badge">Best Seller</div>
+                        <img src="assets/kopi-susu-double.png" alt="Kopi Susu Double Shot" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Kopi Susu Double Shot</h3>
+                            <p>Rp13.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge gold-badge">Best Seller</div>
+                        <img src="assets/kopi-susu-triple.png" alt="Kopi Susu Triple Shot" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Kopi Susu Triple Shot</h3>
+                            <p>Rp16.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge">Tuah Kopi</div>
+                        <img src="assets/caramel.png" alt="Caramel" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Caramel</h3>
+                            <p>Rp13.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge">Tuah Kopi</div>
+                        <img src="assets/vanila.png" alt="Vanila" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Vanila</h3>
+                            <p>Rp15.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge gold-badge">Signature</div>
+                        <img src="assets/gula-aren.png" alt="Kopi Susu Gula Aren" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Kopi Susu Gula Aren</h3>
+                            <p>Rp12.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge">Tuah Kopi</div>
+                        <img src="assets/americano.png" alt="Americano" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Americano</h3>
+                            <p>Rp10.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge">Tuah Kopi</div>
+                        <img src="assets/cream-cheese.png" alt="Cream Cheese" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Cream Cheese</h3>
+                            <p>Rp16.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge">Tuah Kopi</div>
+                        <img src="assets/butterscotch.png" alt="Butterscotch" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Butterscotch</h3>
+                            <p>Rp13.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge gold-badge">Favorite</div>
+                        <img src="assets/matcha.png" alt="Matcha" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Matcha</h3>
+                            <p>Rp15.000</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-badge gold-badge">Best Seller</div>
+                        <img src="assets/kopi-susu-single.png" alt="Kopi Susu Single Shot" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Kopi Susu Single Shot</h3>
+                            <p>Rp10.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge gold-badge">Best Seller</div>
+                        <img src="assets/kopi-susu-double.png" alt="Kopi Susu Double Shot" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Kopi Susu Double Shot</h3>
+                            <p>Rp13.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge gold-badge">Best Seller</div>
+                        <img src="assets/kopi-susu-triple.png" alt="Kopi Susu Triple Shot" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Kopi Susu Triple Shot</h3>
+                            <p>Rp16.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge">Tuah Kopi</div>
+                        <img src="assets/caramel.png" alt="Caramel" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Caramel</h3>
+                            <p>Rp13.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge">Tuah Kopi</div>
+                        <img src="assets/vanila.png" alt="Vanila" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Vanila</h3>
+                            <p>Rp15.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge gold-badge">Signature</div>
+                        <img src="assets/gula-aren.png" alt="Kopi Susu Gula Aren" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Kopi Susu Gula Aren</h3>
+                            <p>Rp12.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge">Tuah Kopi</div>
+                        <img src="assets/americano.png" alt="Americano" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Americano</h3>
+                            <p>Rp10.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge">Tuah Kopi</div>
+                        <img src="assets/cream-cheese.png" alt="Cream Cheese" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Cream Cheese</h3>
+                            <p>Rp16.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge">Tuah Kopi</div>
+                        <img src="assets/butterscotch.png" alt="Butterscotch" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Butterscotch</h3>
+                            <p>Rp13.000</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-badge gold-badge">Favorite</div>
+                        <img src="assets/matcha.png" alt="Matcha" class="menu-img">
+                        <div class="menu-content">
+                            <h3>Matcha</h3>
+                            <p>Rp15.000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cabang" class="cabang-section">
+            <div class="section-header">
+                <h2>Kunjungi Outlet Kami</h2>
+                <p>Temukan pengalaman Tuah Kopi di lokasi terdekatmu.</p>
+            </div>
+            <div class="cabang-grid" id="publicCabangContainer">
+                </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <h3>Tuah Kopi</h3>
+                <h4>100% Robusta Asli</h4>
+                <p>Cita rasa autentik dari biji pilihan dengan racikan istimewa. Nikmati kopi yang bikin hari lebih berwarna.</p>
+            </div>
+            <div class="footer-col links-col">
+                <h3>Navigasi Cepat</h3>
+                <ul>
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#best-seller">Signature</a></li>
+                    <li><a href="#menu">Katalog Menu</a></li>
+                    <li><a href="#cabang">Lokasi Outlet</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h3>Hubungi Kami</h3>
+                <div class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://instagram.com/tuahkopi.tnj" target="_blank">@tuahkopi.tnj</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/6285763233704" target="_blank">085763233704</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Tuah Kopi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
